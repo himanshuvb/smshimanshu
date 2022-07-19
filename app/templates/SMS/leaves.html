@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static "CSS/main.css" %}">
+		<link rel="stylesheet" href="{% static "CSS/fontawesome-all.min.css" %}">
+		<noscript><link rel="stylesheet" href="{% static 'CSS/noscript.css' %}" ></noscript>
+	</head>
+	<body class="is-preload">
+        <form method="post" action="">
+            <table class="form-table">
+                {% csrf_token %}
+                <tr>
+                    <td class="form-table">Enter Name </td>
+                    <td class="form-table"><input class="inputData" type="text" name="student_name"></td>
+                </tr>
+                <tr>
+                    <td class="form-table">Enter Reg no.: </td>
+                    <td class="form-table"><input style="color:black;" class="inputData"  type="number" name="student_regno"></td>
+                </tr>
+                <tr>
+                    <td class="form-table">Enter Reason for Leave: </td>
+                    <td class="form-table"><input style="color:black;" class="inputData"  type="textarea" name="student_reason"></td>
+                </tr>
+                <tr>
+                    <td  class="form-table" colspan="2">
+                        <input class="inputData" type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; 2022 All rights reserved.</li><li>Design: Shubham Nagarkar</li>
+                </ul>
+            </div>
+        </footer>
+
+    <!-- Scripts -->
+        <script src="{% static "JS/jquery.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrollex.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrolly.min.js" %}"></script>
+        <script src="{% static "JS/browser.min.js" %}"></script>
+        <script src="{% static "JS/breakpoints.min.js" %}"></script>
+        <script src="{% static "JS/util.js" %}"></script>
+        <script src="{% static "JS/main.js" %}"></script>
+
+</body>
+</html>
+

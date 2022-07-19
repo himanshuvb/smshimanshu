@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static "CSS/main.css" %}">
+		<link rel="stylesheet" href="{% static "CSS/fontawesome-all.min.css" %}">
+		<noscript><link rel="stylesheet" href="{% static 'CSS/noscript.css' %}" ></noscript>
+	</head>
+	<body class="is-preload">
+        <section id="sidebar">
+            <div class="inner">
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'index'%}">TO HOMEPAGE</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <div id="wrapper">
+
+        <h4>You have {{ all_students|length }} students <a href="{% url 'add_student' %}"><button>+</button></a></h4>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll no</th>
+                <th>Reg no</th>
+                <th>Age</th>
+                <th>Division</th>
+                <th>Profile picture</th>
+                <th>leaves count</th>
+                <th>Delete profile</th>
+            </tr>
+            {% for student in all_students %}
+            <tr>
+                <td>{{ student.name| title }}</td>
+                <td>{{ student.roll}}</td>
+                <td>{{ student.regno}}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.div}}</td>
+                <td>{% if student.profile %}
+                    <img width="100" src="{{ student.profile.url }}" alt="{{ student.name }}">
+                {% else %}
+                    <h3>{{ student.name }}</h3>
+                {% endif %}
+            </td>
+            <td>{{student.leaves_total}}</td>
+            <td><a href="{% url 'student_delete' student.regno  %}">Delete Student</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; 2022 All rights reserved.</li><li>Design: Shubham Nagarkar</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static "JS/jquery.min.js" %}"></script>
+			<script src="{% static "JS/jquery.scrollex.min.js" %}"></script>
+			<script src="{% static "JS/jquery.scrolly.min.js" %}"></script>
+			<script src="{% static "JS/browser.min.js" %}"></script>
+			<script src="{% static "JS/breakpoints.min.js" %}"></script>
+			<script src="{% static "JS/util.js" %}"></script>
+			<script src="{% static "JS/main.js" %}"></script>
+
+	</body>
+</html>

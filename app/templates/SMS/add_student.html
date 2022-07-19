@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static "CSS/main.css" %}">
+		<link rel="stylesheet" href="{% static "CSS/fontawesome-all.min.css" %}">
+		<noscript><link rel="stylesheet" href="{% static 'CSS/noscript.css' %}" ></noscript>
+	</head>
+    <body class="is-preload">
+
+        <form method="post" action="{% url 'add_student' %}" enctype="multipart/form-data">
+            <table class="form-table">
+                {% csrf_token %}
+                <tr>
+                    <td class="form-table">Enter Student Name: </td>
+                    <td class="form-table"><input class="inputData" type="text" name="student_name" required></td>
+                </tr>
+                <tr>
+                    <td class="form-table">Enter Student Roll no: </td>
+                    <td class="form-table"><input style="color: black;" class="inputData"  type="number" name="student_roll" required></td>
+                </tr>
+                <tr>
+                    <td class="form-table">Enter Student Registration no.: </td>
+                    <td class="form-table"><input style="color: black;" class="inputData" type="number" name="student_regno" required></td>
+                </tr>
+                <tr>
+                    <td class="form-table">Enter Student Age: </td>
+                    <td class="form-table"><input style="color: black;" class="inputData"  type="number" name="student_age" required></td>
+                </tr>
+                <tr>
+                    <td class="form-table">Enter Student Division: </td>
+                    <td class="form-table"><input style="color: black;" class="inputData"  type="number" name="student_div" required></td>
+                </tr>
+                <tr>
+                    <td class="form-table">Enter Student Profile picture: </td>
+                    <td class="form-table"><input  class="inputData"  type="file" name="profile"></td>
+                </tr>
+                <tr>
+                    <td  class="form-table" colspan="2">
+                        <input class="inputData" type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+    
+    
+        </form>
+
+
+
+
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; 2022 All rights reserved.</li><li>Design: Shubham Nagarkar</li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{% static "JS/jquery.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrollex.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrolly.min.js" %}"></script>
+        <script src="{% static "JS/browser.min.js" %}"></script>
+        <script src="{% static "JS/breakpoints.min.js" %}"></script>
+        <script src="{% static "JS/util.js" %}"></script>
+        <script src="{% static "JS/main.js" %}"></script>
+
+    </body>
+</html>
+
