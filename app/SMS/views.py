@@ -30,7 +30,7 @@ def student_login(request):
         
          if student is not None:
                 if student:
-                    return redirect('ap_leaves')
+                    return redirect('student_home')
                 else:
                     return render(request, "SMS/stu_login.html", context={"error": "User is not active"})
          else:

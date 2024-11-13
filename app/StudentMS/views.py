@@ -61,6 +61,15 @@ def student_delete(request, student_regno):
     student.delete()
     return redirect('student_list')
 
+def student_home(request):
+    if request.method == "POST":
+        if 'apply_leaves' in request.POST:
+            return redirect('apply_leaves')  # Redirect to the apply leaves page
+        # elif 'pay_fees' in request.POST:
+        #     return redirect('pay_fees')      # Redirect to the pay fees page
+
+    # Render the student home page with buttons
+    return render(request, 'SMS/student_home.html')
 
 def ap_leaves(request):
     if request.method == "GET":

@@ -34,6 +34,8 @@
                 <th>Division</th>
                 <th>Profile picture</th>
                 <th>leaves count</th>
+                <th>Fees</th>
+                <th>pending Fees</th>
                 <th>Delete profile</th>
             </tr>
             {% for student in all_students %}
@@ -50,6 +52,8 @@
                 {% endif %}
             </td>
             <td>{{student.leaves_total}}</td>
+            <td>{{ student.fees}}</td>
+            <td>{{ student.pendingfees}}</td>
             <td><a href="{% url 'student_delete' student.regno  %}">Delete Student</a></td>
             </tr>
             {% endfor %}
