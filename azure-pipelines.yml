@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: behimdevops
 
 steps:
 - script: echo Hello, world!
